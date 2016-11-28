@@ -3,3 +3,6 @@
 ################################################################################
 
 /packages
+/angular-quickstart/bin
+/angular-quickstart/obj/Debug
+/angular-quickstart/node_modules

@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">New Doctor?</div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="col-md-12">
+                <form [formGroup]="addDoctorForm">
+                    <div class="form-group">
+                        <label>Name: </label>
+                        <input class="form-control" formControlName="Name" placeholder="name">
+                        <small style="color: red" [hidden]="addDoctorForm.controls.Name.valid || addDoctorForm.controls.Name.pristine">
+                            Name is required (minimum 5 characters).
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-success btn-block" (click)="addDoctor(addDoctorForm.value, addDoctorForm.valid)" [disabled]="!addDoctorForm.valid">Add</button>
+                    </div>
+
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

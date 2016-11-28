@@ -1,0 +1,21 @@
+<div class="row">
+    <div [ngClass]="{'col-md-12' : selectedDoctor == null, 'col-md-8' : selectedDoctor != null}">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let doctor of doctors" [class.selected]="doctor === selectedDoctor" (click)="onSelect(doctor)">
+                    <td>{{doctor.Id}}</td>
+                    <td>{{doctor.Name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="selectedDoctor != null" class="col-md-4">
+        <doctor-detail [doctor]="selectedDoctor"></doctor-detail>
+    </div>
+</div>
