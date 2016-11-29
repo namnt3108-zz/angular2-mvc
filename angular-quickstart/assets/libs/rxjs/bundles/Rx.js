@@ -6741,10 +6741,10 @@ var combineLatest_1 = require('./combineLatest');
  *
  * @example <caption>Map two click events to a finite interval Observable, then apply combineAll</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map(ev =>
+ * var higherOrder = clicks.map(ev =>
  *   Rx.Observable.interval(Math.random()*2000).take(3)
  * ).take(2);
- * var result = higdoctorrder.combineAll();
+ * var result = higherOrder.combineAll();
  * result.subscribe(x => console.log(x));
  *
  * @see {@link combineLatest}
@@ -7047,8 +7047,8 @@ var mergeAll_1 = require('./mergeAll');
  *
  * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
- * var firstOrder = higdoctorrder.concatAll();
+ * var higherOrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
+ * var firstOrder = higherOrder.concatAll();
  * firstOrder.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}
@@ -8540,8 +8540,8 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  *
  * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var result = higdoctorrder.exhaust();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var result = higherOrder.exhaust();
  * result.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}
@@ -10204,14 +10204,14 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  *
  * @example <caption>Spawn a new interval Observable for each click event, and blend their outputs as one Observable</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var firstOrder = higdoctorrder.mergeAll();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var firstOrder = higherOrder.mergeAll();
  * firstOrder.subscribe(x => console.log(x));
  *
  * @example <caption>Count from 0 to 9 every second for each click, but only allow 2 concurrent timers</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
- * var firstOrder = higdoctorrder.mergeAll(2);
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
+ * var firstOrder = higherOrder.mergeAll(2);
  * firstOrder.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}
@@ -12632,8 +12632,8 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  * @example <caption>Rerun an interval Observable on every click event</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
  * // Each click event is mapped to an Observable that ticks every second
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var switched = higdoctorrder.switch();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var switched = higherOrder.switch();
  * // The outcome is that `switched` is essentially a timer that restarts
  * // on every click. The interval Observables from older clicks do not merge
  * // with the current interval Observable.

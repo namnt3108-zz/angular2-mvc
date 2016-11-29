@@ -27,8 +27,8 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  * @example <caption>Rerun an interval Observable on every click event</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
  * // Each click event is mapped to an Observable that ticks every second
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var switched = higdoctorrder.switch();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var switched = higherOrder.switch();
  * // The outcome is that `switched` is essentially a timer that restarts
  * // on every click. The interval Observables from older clicks do not merge
  * // with the current interval Observable.

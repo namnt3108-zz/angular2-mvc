@@ -25,8 +25,8 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  *
  * @example <caption>Run a finite timer for each click, only if there is no currently active timer</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var result = higdoctorrder.exhaust();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var result = higherOrder.exhaust();
  * result.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}

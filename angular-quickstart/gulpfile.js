@@ -1,5 +1,4 @@
-﻿var ts = require('gulp-typescript');
-var gulp = require('gulp');
+﻿var gulp = require('gulp');
 var clean = require('gulp-clean');
 
 var destLibsPath = './assets/libs/';
@@ -27,7 +26,8 @@ gulp.task("angularScripts", () => {
             'zone.js/dist/zone.js',
             'reflect-metadata/Reflect.js',
             'systemjs/dist/system.src.js',
-            'rxjs/**/*.js'
+            'rxjs/**/*.js',
+            'lodash/lodash.js'
     ], {
         cwd: "node_modules/**"
     })

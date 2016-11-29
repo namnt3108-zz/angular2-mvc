@@ -24,8 +24,8 @@ var mergeAll_1 = require('./mergeAll');
  *
  * @example <caption>For each click event, tick every second from 0 to 3, with no concurrency</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
- * var firstOrder = higdoctorrder.concatAll();
+ * var higherOrder = clicks.map(ev => Rx.Observable.interval(1000).take(4));
+ * var firstOrder = higherOrder.concatAll();
  * firstOrder.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}

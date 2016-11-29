@@ -504,7 +504,7 @@ var InMemoryDbService = (function () {
 /**
 *  InMemoryBackendService configuration options
 *  Usage:
-*    InMemoryWebApiModule.forRoot(InMemdoctorService, {delay: 600})
+*    InMemoryWebApiModule.forRoot(InMemHeroService, {delay: 600})
 *
 *  or if providing separately:
 *    provide(InMemoryBackendConfig, {useValue: {delay: 600}}),
@@ -523,6 +523,13 @@ var InMemoryBackendConfig = (function () {
             rootPath: ''
         }, config);
     }
+    InMemoryBackendConfig.decorators = [
+        { type: _angular_core.Injectable },
+    ];
+    /** @nocollapse */
+    InMemoryBackendConfig.ctorParameters = [
+        null,
+    ];
     return InMemoryBackendConfig;
 }());
 /**
@@ -570,11 +577,11 @@ function setStatusText(options) {
  * import { HttpModule }           from '@angular/http';
  * import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
  *
- * import { InMemdoctorService, inMemConfig } from '../api/in-memory-doctor.service';
+ * import { InMemHeroService, inMemConfig } from '../api/in-memory-hero.service';
  * @NgModule({
  *  imports: [
  *    HttpModule,
- *    InMemoryWebApiModule.forRoot(InMemdoctorService, inMemConfig),
+ *    InMemoryWebApiModule.forRoot(InMemHeroService, inMemConfig),
  *    ...
  *  ],
  *  ...
@@ -955,6 +962,9 @@ var InMemoryBackendService = (function () {
             }
         }
     };
+    InMemoryBackendService.decorators = [
+        { type: _angular_core.Injectable },
+    ];
     /** @nocollapse */
     InMemoryBackendService.ctorParameters = [
         { type: _angular_core.Injector, },

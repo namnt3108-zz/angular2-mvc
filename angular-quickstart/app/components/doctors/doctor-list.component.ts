@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, Input, Output, EventEmitter } from '@angu
 import { Doctor } from './doctor.model';
 import { DoctorService } from './doctor.service';
 import { EmitterService } from '../../ultilities/emitters.service';
+import * as _ from 'lodash';
 
 @Component({
     selector: 'doctor-list',
@@ -17,7 +18,11 @@ export class DoctorListComponent implements OnInit {
     constructor(private doctorService: DoctorService) { }
 
     private getDoctors(): void {
-        this.doctorService.getDoctors().subscribe(doctors => this.doctors = doctors);
+        let newDoctor = new Doctor();
+        newDoctor.Id = 100;
+        newDoctor.Name = 'Nam 100';
+
+        this.doctorService.getDoctors().subscribe(doctors => this.doctors = _.concat(doctors, newDoctor));
     }
 
     ngOnInit(): void {

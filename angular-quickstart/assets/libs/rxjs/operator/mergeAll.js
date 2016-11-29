@@ -23,14 +23,14 @@ var subscribeToResult_1 = require('../util/subscribeToResult');
  *
  * @example <caption>Spawn a new interval Observable for each click event, and blend their outputs as one Observable</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000));
- * var firstOrder = higdoctorrder.mergeAll();
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000));
+ * var firstOrder = higherOrder.mergeAll();
  * firstOrder.subscribe(x => console.log(x));
  *
  * @example <caption>Count from 0 to 9 every second for each click, but only allow 2 concurrent timers</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
- * var firstOrder = higdoctorrder.mergeAll(2);
+ * var higherOrder = clicks.map((ev) => Rx.Observable.interval(1000).take(10));
+ * var firstOrder = higherOrder.mergeAll(2);
  * firstOrder.subscribe(x => console.log(x));
  *
  * @see {@link combineAll}

@@ -23,10 +23,10 @@ var combineLatest_1 = require('./combineLatest');
  *
  * @example <caption>Map two click events to a finite interval Observable, then apply combineAll</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var higdoctorrder = clicks.map(ev =>
+ * var higherOrder = clicks.map(ev =>
  *   Rx.Observable.interval(Math.random()*2000).take(3)
  * ).take(2);
- * var result = higdoctorrder.combineAll();
+ * var result = higherOrder.combineAll();
  * result.subscribe(x => console.log(x));
  *
  * @see {@link combineLatest}
