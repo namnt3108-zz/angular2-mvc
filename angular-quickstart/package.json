@@ -2,8 +2,8 @@
   "name": "angular-quickstart",
   "version": "1.0.0",
   "description": "QuickStart package.json from the documentation, supplemented with testing support",
-  "scripts": { },
-  "keywords": [ ],
+  "scripts": {},
+  "keywords": [],
   "author": "",
   "licenses": [
     {
@@ -37,7 +37,8 @@
     "@types/node": "^6.0.46",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
-    "gulp-file": "^0.3.0"
+    "gulp-file": "^0.3.0",
+    "typescript": "^2.0.10"
   },
-  "repository": { }
+  "repository": {}
 }

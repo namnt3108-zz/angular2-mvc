@@ -1,20 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    //"sourceMap": true,
-    "outDir": "./assets/js/",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
     "noImplicitAny": true,
+    "outDir": "./assets/js/",
+    "removeComments": false,
+    "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "typeRoots": [
-      "./node_modules/@types/"
-    ]
+    "target": "es5"
+    //"inlineSourceMap": true,
+    //"inlineSources": true,
   },
   "compileOnSave": true,
   "exclude": [
