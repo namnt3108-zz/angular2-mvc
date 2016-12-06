@@ -26,3 +26,4 @@ import { AddDoctorComponent } from '../components/doctors/add-doctor.component';
     ]
 })
 export class HomeModule { }
+

@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,21 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var schedule_component_1 = require('../components/schedule/schedule.component');
-var ScheduleModule = (function () {
-    function ScheduleModule() {
-    }
-    ScheduleModule = __decorate([
-        core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
-            declarations: [schedule_component_1.ScheduleComponent],
-            bootstrap: [schedule_component_1.ScheduleComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ScheduleModule);
-    return ScheduleModule;
-}());
-exports.ScheduleModule = ScheduleModule;
+define(["require", "exports", '@angular/core', '@angular/platform-browser', '../components/schedule/schedule.component', 'primeng/components/schedule/schedule'], function (require, exports, core_1, platform_browser_1, schedule_component_1, schedule_1) {
+    "use strict";
+    var ScheduleModule = (function () {
+        function ScheduleModule() {
+        }
+        ScheduleModule = __decorate([
+            core_1.NgModule({
+                imports: [platform_browser_1.BrowserModule, schedule_1.ScheduleModule],
+                declarations: [schedule_component_1.ScheduleComponent],
+                bootstrap: [schedule_component_1.ScheduleComponent]
+            }), 
+            __metadata('design:paramtypes', [])
+        ], ScheduleModule);
+        return ScheduleModule;
+    }());
+    exports.ScheduleModule = ScheduleModule;
+});
 //# sourceMappingURL=schedule.module.js.map

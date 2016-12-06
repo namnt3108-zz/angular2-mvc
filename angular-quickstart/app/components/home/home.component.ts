@@ -10,3 +10,4 @@ export class HomeComponent {
     private titleDoctors = 'Doctors';
     private titleAddDoctor = 'Add Doctor';
 }
+

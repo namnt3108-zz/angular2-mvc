@@ -2,7 +2,9 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "module": "commonjs",
+    //"declaration": true,
+    //"declarationDir": "./app/",
+    "module": "amd",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "outDir": "./assets/js/",

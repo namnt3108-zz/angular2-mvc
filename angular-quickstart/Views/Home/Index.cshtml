@@ -4,6 +4,12 @@
 
 <app-home>Loading...</app-home>
 
-<script>
-    System.import('page-bootstrappers/home').catch(function (err) { console.error(err); });
-</script>
+
+@section scripts
+{
+    @*@Scripts.Render("~/assets/js/bundles/home.js")*@
+
+    <script>
+        System.import('page-bootstrappers/home').catch(function (err) { console.error(err); });
+    </script>
+}

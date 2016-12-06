@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,18 +7,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ScheduleComponent = (function () {
-    function ScheduleComponent() {
-    }
-    ScheduleComponent = __decorate([
-        core_1.Component({
-            selector: 'app-schedule',
-            template: "<h1>Hello from Schedule Page</h1>",
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ScheduleComponent);
-    return ScheduleComponent;
-}());
-exports.ScheduleComponent = ScheduleComponent;
+define(["require", "exports", '@angular/core'], function (require, exports, core_1) {
+    "use strict";
+    var ScheduleComponent = (function () {
+        function ScheduleComponent() {
+        }
+        ScheduleComponent.prototype.ngOnInit = function () {
+            this.events = [
+                {
+                    "title": "All Day Event",
+                    "start": "2016-01-01"
+                },
+                {
+                    "title": "Long Event",
+                    "start": "2016-01-07",
+                    "end": "2016-01-10"
+                },
+                {
+                    "title": "Repeating Event",
+                    "start": "2016-01-09T16:00:00"
+                },
+                {
+                    "title": "Repeating Event",
+                    "start": "2016-01-16T16:00:00"
+                },
+                {
+                    "title": "Conference",
+                    "start": "2016-01-11",
+                    "end": "2016-01-13"
+                }
+            ];
+            this.headerConfig = {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            };
+        };
+        ScheduleComponent = __decorate([
+            core_1.Component({
+                selector: 'app-schedule',
+                template: "\n        <h1>Hello from Schedule Page</h1><br/><p-schedule [events]=\"events\" [header]=\"headerConfig\"></p-schedule>"
+            }), 
+            __metadata('design:paramtypes', [])
+        ], ScheduleComponent);
+        return ScheduleComponent;
+    }());
+    exports.ScheduleComponent = ScheduleComponent;
+});
 //# sourceMappingURL=schedule.component.js.map

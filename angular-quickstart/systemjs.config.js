@@ -12,9 +12,9 @@
             defaultExtension: 'js',
             main: 'home.js'
         },
-        'page-bootstrappers/about': {
+        'page-bootstrappers/schedule': {
             defaultExtension: 'js',
-            main: 'about.js'
+            main: 'schedule.js'
         }
     };
 
@@ -46,7 +46,8 @@
             // other libraries
             'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
-            'lodash': 'npm:lodash/lodash.js'
+            'lodash': 'npm:lodash/lodash.js',
+            'primeng': 'npm:primeng'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: packages

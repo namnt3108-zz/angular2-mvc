@@ -2,8 +2,20 @@
     ViewBag.Title = "Schedule Page";
 }
 
+@section head {
+    @Styles.Render("~/bundles/css/primeng")
+    @Styles.Render("~/bundles/css/full-calendar")
+}
+
 <app-schedule>Loading...</app-schedule>
 
-<script>
-    System.import('page-bootstrappers/schedule').catch(function (err) { console.error(err); });
-</script>
+@section scripts{
+
+    @Scripts.Render("~/bundles/js/full-calendar")
+    @*@Scripts.Render("~/assets/js/bundles/schedule.js")*@
+
+    <script>
+        System.import('page-bootstrappers/schedule').catch(function (err) { console.error(err); });
+    </script>
+}
+

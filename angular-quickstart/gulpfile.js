@@ -9,7 +9,7 @@ gulp.task('cleanLibs', function () {
         .pipe(clean());
 });
 
-gulp.task("angularScripts", () => {
+gulp.task("nodeLibs", () => {
     gulp.src([
             '@angular/core/bundles/core.umd.js',
             '@angular/common/bundles/common.umd.js',
@@ -27,11 +27,18 @@ gulp.task("angularScripts", () => {
             'reflect-metadata/Reflect.js',
             'systemjs/dist/system.src.js',
             'rxjs/**/*.js',
-            'lodash/lodash.js'
+            'lodash/lodash.js',
+            'primeng/**/*.js',
+            'primeng/*.js',
+            'primeng/resources/**',
+            'fullcalendar/**',
+            'jquery/dist/*.js',
+            'bootstrap/dist/**',
+            'moment/moment.js'
     ], {
         cwd: "node_modules/**"
     })
         .pipe(gulp.dest(destLibsPath));
 });
 
-gulp.task('default', ['angularScripts']);
+gulp.task('default', ['nodeLibs']);

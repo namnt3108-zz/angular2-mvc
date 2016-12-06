@@ -1,4 +1,3 @@
-"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,37 +7,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var doctor_service_1 = require('./doctor.service');
-var emitters_service_1 = require('../../ultilities/emitters.service');
-var AddDoctorComponent = (function () {
-    function AddDoctorComponent(doctorService, formBuilder) {
-        this.doctorService = doctorService;
-        this.formBuilder = formBuilder;
-    }
-    AddDoctorComponent.prototype.ngOnInit = function () {
-        this.addDoctorForm = this.formBuilder.group({
-            Name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]]
-        });
-    };
-    AddDoctorComponent.prototype.addDoctor = function (doctor, isValid) {
-        if (isValid) {
-            this.doctorService.saveDoctor(doctor)
-                .subscribe(function (response) {
-                emitters_service_1.EmitterService.get('added-doctor').emit('added-doctor');
-            });
+define(["require", "exports", '@angular/core', '@angular/forms', './doctor.service', '../../ultilities/emitters.service'], function (require, exports, core_1, forms_1, doctor_service_1, emitters_service_1) {
+    "use strict";
+    var AddDoctorComponent = (function () {
+        function AddDoctorComponent(doctorService, formBuilder) {
+            this.doctorService = doctorService;
+            this.formBuilder = formBuilder;
         }
-    };
-    AddDoctorComponent = __decorate([
-        core_1.Component({
-            selector: 'add-doctor',
-            templateUrl: 'app/components/doctors/add-doctor.component.html',
-            providers: [doctor_service_1.DoctorService]
-        }), 
-        __metadata('design:paramtypes', [doctor_service_1.DoctorService, forms_1.FormBuilder])
-    ], AddDoctorComponent);
-    return AddDoctorComponent;
-}());
-exports.AddDoctorComponent = AddDoctorComponent;
+        AddDoctorComponent.prototype.ngOnInit = function () {
+            this.addDoctorForm = this.formBuilder.group({
+                Name: ['', [forms_1.Validators.required, forms_1.Validators.minLength(3)]]
+            });
+        };
+        AddDoctorComponent.prototype.addDoctor = function (doctor, isValid) {
+            if (isValid) {
+                this.doctorService.saveDoctor(doctor)
+                    .subscribe(function (response) {
+                    emitters_service_1.EmitterService.get('added-doctor').emit('added-doctor');
+                });
+            }
+        };
+        AddDoctorComponent = __decorate([
+            core_1.Component({
+                selector: 'add-doctor',
+                templateUrl: 'app/components/doctors/add-doctor.component.html',
+                providers: [doctor_service_1.DoctorService]
+            }), 
+            __metadata('design:paramtypes', [doctor_service_1.DoctorService, forms_1.FormBuilder])
+        ], AddDoctorComponent);
+        return AddDoctorComponent;
+    }());
+    exports.AddDoctorComponent = AddDoctorComponent;
+});
 //# sourceMappingURL=add-doctor.component.js.map
