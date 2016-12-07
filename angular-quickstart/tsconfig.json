@@ -6,7 +6,7 @@
     //"declarationDir": "./app/",
     "module": "amd",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "./assets/js/",
     "removeComments": false,
     "sourceMap": true,
